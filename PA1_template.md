@@ -1,13 +1,6 @@
-<!-- rmarkdown v1 -->
----
-title: "Reproducible Research: Peer Assessment 1"
-author: "Sian Lun Lau"
-date: "Oct. 2016"
-output: 
-  html_document:
-    keep_md: true
----
-
+# Reproducible Research: Peer Assessment 1
+Sian Lun Lau  
+Oct. 2016  
 
 ## Loading and preprocessing the data
 
@@ -29,7 +22,7 @@ steps_by_day <- aggregate(steps ~ date, data, sum)
 hist(steps_by_day$steps, main = paste("Total Steps Each Day"), col="blue", xlab="Number of Steps")
 ```
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 Next, calculate the mean and median
 
@@ -49,7 +42,7 @@ steps_by_interval <- aggregate(steps ~ interval, data, mean)
 plot(steps_by_interval$interval,steps_by_interval$steps, type="l", xlab="Interval", ylab="Number of Steps",main="Average Number of Steps per Day by Interval")
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 
 ```r
@@ -94,7 +87,7 @@ hist(steps_by_day$steps, main = paste("Total Steps Each Day"), col="red", xlab="
 legend("topright", c("Imputed", "Non-imputed"), col=c("blue", "red"), lwd=10)
 ```
 
-![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
 The new mean and median from the imputed data:
 
@@ -139,7 +132,7 @@ library(lattice)
 xyplot(steps_by_interval_imputed$steps ~ steps_by_interval_imputed$interval|steps_by_interval_imputed$dow, main="Average Steps per Day by Interval",xlab="Interval", ylab="Steps",layout=c(1,2), type="l")
 ```
 
-![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
 
 From the plot, there seemed to be more overall activity on weekends. However, there is a higher peak at the earlier interval of the weekday's plot.
 
